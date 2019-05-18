@@ -23,7 +23,7 @@ def execute_sql(sql, values=(), commit=False, single=False):
 @app.teardown_appcontext
 def close_connection(exception):
     connection = getattr(g, '_connection', None);
-    if connection not in None:
+    if connection != None:
         connection.close();
 
 @app.route('/')
